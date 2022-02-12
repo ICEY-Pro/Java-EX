@@ -6,7 +6,6 @@ package com.example;
  */
 /*
  * Java程序中最基本的组成单位是类，
- * 
  * 类的定义格式：
  * public class 类名{
  * 
