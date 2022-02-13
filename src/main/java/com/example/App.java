@@ -236,10 +236,10 @@ public class App {
          * System.out.println("error");
          * }
          */
-        // while循环的死循环结构,当前编译器会报错
+        // while循环的死循环结构,当前编译器会报错,但可以规避报错
         /*
-         * while(true)
-         * {
+         * boolean isHot = true;
+         * while (isHot) {
          * System.out.println("error");
          * }
          */
@@ -274,6 +274,18 @@ public class App {
         Random r = new Random();
         int num = r.nextInt(10);// 10表示获取的随机数值域为[0,10),int类型获取整数，实际为0~9
         System.out.println("num = " + num);
-        
+        System.out.println("--------");
+        // -------------------------------------------------------------------------------------
+        /*
+         * 数组：用于存储多个相同类型数据的存储模型
+         * 格式1：数据类型[] 变量名;
+         * 格式2：数据类型 变量名[];
+         * 动态初始化：只指定数组长度，由系统为数组分配初始值
+         * 格式：数据类型[] 变量名 = new 数据类型[数组长度];
+         */
+        int[] arr1 = new int[3];
+        int arr2[] = new int[4];
+        System.out.println(arr1[0]);
+        System.out.println(arr2[1]);
     }
 }
