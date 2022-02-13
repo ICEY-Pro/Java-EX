@@ -194,5 +194,31 @@ public class App {
             System.out.println("已执行" + g + "次");
         }
         System.out.println("--------");
+        // 求偶数和
+        int sum = 0;
+        for (int i = 1; i <= 100; i++) {
+            if (i % 2 == 0)
+                sum += i;
+        }
+        System.out.println("sum = " + sum);
+        System.out.println("--------");
+        // 水仙花数,求高次方用Math.pow()函数
+        int j = 0;
+        System.out.println("水仙花数为:");
+        for (int h = 100; h < 1000; h++) {
+            if (Math.pow((h / 100), 3) + Math.pow((h / 10 % 10), 3) + Math.pow((h % 10), 3) == h) {
+                System.out.println(h);
+                j++;
+            }
+        }
+        System.out.println("共" + j + "个.");
+        System.out.println("--------");
+        // while循环语句
+        int k = 0;
+        while (k <= 5) {
+            System.out.println("已执行" + k + "次");
+            k++;
+        }
+        System.out.println("--------");
     }
 }
