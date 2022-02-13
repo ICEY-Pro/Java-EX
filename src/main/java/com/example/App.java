@@ -1,5 +1,6 @@
 package com.example;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -60,7 +61,7 @@ public class App {
         System.out.println("--------");
         // 空常量不能直接输出
         // System.out.println(null);
-        // -------------------------------------------------------------------------------------
+        // ------------------------------------------------------------------------------------
         /*
          * 变量定义格式：
          * 数据类型 变量名 = 变量值；
@@ -81,7 +82,7 @@ public class App {
         float c = 13.14f;
         System.out.println(c);
         System.out.println("--------");
-        // -------------------------------------------------------------------------------------
+        // ------------------------------------------------------------------------------------
         // 强制类型转换(不建议使用)
         int d = (int) 88.88;
         System.out.println(d);
@@ -89,16 +90,18 @@ public class App {
         e = (short) (e + 20);// 等价于e += e;
         System.out.println(e);
         System.out.println("--------");
-        // -------------------------------------------------------------------------------------
+        // ------------------------------------------------------------------------------------
         // 算术运算符
         double m = 6;
         double n = 4;
         System.out.println(m + n);
         System.out.println(m - n);
         System.out.println(m * n);
-        // 整数之间进行运算只能得到整数，浮点数参与运算才能得到小数
-        // 算数表达式中包含多个数据类型的时候，整个表达式的类型会自动提升为表达式中操作数的最高等级
-        // 等级顺序：byte,short,char->int->long->float->double
+        /*
+         * 整数之间进行运算只能得到整数，浮点数参与运算才能得到小数
+         * 算数表达式中包含多个数据类型的时候，整个表达式的类型会自动提升为表达式中操作数的最高等级
+         * 等级顺序：byte,short,char->int->long->float->double
+         */
         System.out.println(m / n);
         System.out.println(m % n);
         System.out.println("--------");
@@ -112,16 +115,19 @@ public class App {
         f += f;
         System.out.println(f);
         System.out.println("--------");
-        // 自增自减运算符:++,--类似C语言
-        // 关系运算符:==,!=,>,>=,<,<=,类似C语言
-        // 逻辑运算符:&与,|或,!非,^异或(同假异真)
-        // 短路逻辑运算符:&&(如果左边为假，右边不执行),||;(如果左边为真，右边不执行)
+        /*
+         * 自增自减运算符:++,--类似C语言
+         * 关系运算符:==,!=,>,>=,<,<=,类似C语言
+         * 逻辑运算符:&与,|或,!非,^异或(同假异真)
+         * 短路逻辑运算符:&&(如果左边为假，右边不执行),||;(如果左边为真，右边不执行)
+         */
         /*
          * 三元运算符:格式:关系表达式?表达式1:表达式2
          * a>b?a:b
          * 计算规则：首先计算关系表达式的值，如果值为ture，则表达式1的值为运算结果；
          * 反之，则表达式2的值为运算结果。
          */
+        // ------------------------------------------------------------------------------------
         // if语句
         if (a == b) {
             System.out.println("a = b");
@@ -147,6 +153,7 @@ public class App {
         }
         System.out.println("--------");
         // 数据测试：正确数据，边界数据，错误数据
+        // ------------------------------------------------------------------------------------
         // switch语句
         switch (a) {
             case 1:
@@ -189,8 +196,9 @@ public class App {
         }
         sc.close();
         System.out.println("--------");
-        // for循环语句
-        for (int g = 1; g < 6; g++) {
+        // ------------------------------------------------------------------------------------
+        // for循环语句,g为局部变量，循环结束后无法使用
+        for (int g = 1; g <= 5; g++) {
             System.out.println("已执行" + g + "次");
         }
         System.out.println("--------");
@@ -213,12 +221,59 @@ public class App {
         }
         System.out.println("共" + j + "个.");
         System.out.println("--------");
-        // while循环语句
-        int k = 0;
+        // -------------------------------------------------------------------------------------
+        // while循环语句,k为全局变量，循环结束后依然可以使用
+        int k = 1;
         while (k <= 5) {
             System.out.println("已执行" + k + "次");
             k++;
         }
         System.out.println("--------");
+        // do...while循环先执行后判断，for和while循环先判断后执行
+        // for循环的死循环结构，使用Ctrl+C强行停止
+        /*
+         * for (;;) {
+         * System.out.println("error");
+         * }
+         */
+        // while循环的死循环结构,当前编译器会报错
+        /*
+         * while(true)
+         * {
+         * System.out.println("error");
+         * }
+         */
+        // -------------------------------------------------------------------------------------
+        /*
+         * 跳转控制语句：continue和break
+         * continue用于循环中，基于条件控制，跳过某次循环体的执行，继续下一次的执行
+         * break用于循环中，基于条件控制，终止循环体内容的执行
+         */
+        for (int i = 1; i <= 5; i++) {
+            if (i % 2 == 0) {
+                continue;
+            }
+            System.out.println("第" + i + "次执行");
+        }
+        System.out.println("--------");
+        for (int i = 1; i <= 5; i++) {
+            if (i % 2 == 0) {
+                break;
+            }
+            System.out.println("第" + i + "次执行");
+        }
+        System.out.println("--------");
+        // 循环嵌套
+        for (int hour = 0; hour <= 3; hour++) {
+            for (int minute = 0; minute < 3; minute++) {
+                System.out.println(hour + "时" + minute + "分");
+            }
+        }
+        System.out.println("--------");
+        // Random:随机数
+        Random r = new Random();
+        int num = r.nextInt(10);// 10表示获取的随机数值域为[0,10),int类型获取整数，实际为0~9
+        System.out.println("num = " + num);
+        
     }
 }
