@@ -1,5 +1,7 @@
 package com.example;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -120,5 +122,77 @@ public class App {
          * 计算规则：首先计算关系表达式的值，如果值为ture，则表达式1的值为运算结果；
          * 反之，则表达式2的值为运算结果。
          */
+        // if语句
+        if (a == b) {
+            System.out.println("a = b");
+        } else {
+            System.out.println("a != b");
+        }
+        if (a == b) {
+            System.out.println("a = b");
+        } else if (a > b) {
+            System.out.println("a > b");
+        } else {
+            System.out.println("a < b");
+        }
+        System.out.println("--------");
+        // 键盘输入数据并判断
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入一个整数:");
+        int number = sc.nextInt();
+        if (number % 2 == 0) {
+            System.out.println(number + "为偶数");
+        } else {
+            System.out.println(number + "为奇数");
+        }
+        System.out.println("--------");
+        // 数据测试：正确数据，边界数据，错误数据
+        // switch语句
+        switch (a) {
+            case 1:
+                break;
+            case 20:
+                System.out.println("a = 20");
+                break;
+            case 100:
+                break;
+            default:
+                // break;
+        }
+        // case穿透
+        System.out.println("请输入一个月份:");
+        int month = sc.nextInt();
+        switch (month) {
+            case 1:
+            case 2:
+            case 12:
+                System.out.println(month + "月为冬季");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println(month + "月为春季");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println(month + "月为夏季");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println(month + "月为秋季");
+                break;
+            default:
+                System.out.println("输入有误");
+                // break;
+        }
+        sc.close();
+        System.out.println("--------");
+        // for循环语句
+        for (int g = 1; g < 6; g++) {
+            System.out.println("已执行" + g + "次");
+        }
+        System.out.println("--------");
     }
 }
