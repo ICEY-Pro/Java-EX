@@ -282,10 +282,47 @@ public class App {
          * 格式2：数据类型 变量名[];
          * 动态初始化：只指定数组长度，由系统为数组分配初始值
          * 格式：数据类型[] 变量名 = new 数据类型[数组长度];
+         * 静态初始化：指定每个数组元素的值，由系统决定数组长度
+         * 格式：数据类型[] 变量名 = new 数据类型[]{数据1,数据2,...};
+         * 简化格式(推荐)：数据类型[] 变量名 = {数据1,数据2,...};
+         * 数组初始化默认值：
+         * 整数：0
+         * 浮点数：0.0
+         * 布尔值：false
+         * 字符：空字符
+         * 引用数据类型：null;
+         * 获取数组长度：数组名称.length;
          */
-        int[] arr1 = new int[3];
+        int[] arr1 = new int[3];// Java中常用此方式声明数组
         int arr2[] = new int[4];
+        System.out.println(arr1);// 输出数组内存初始地址
+        System.out.println(arr1.length);
         System.out.println(arr1[0]);
         System.out.println(arr2[1]);
+        int[] arr4 = { 1, 2, 3, 4 };
+        System.out.println(arr4[0]);
+        System.out.println(arr4[1]);
+        System.out.println(arr4[2]);
+        System.out.println(arr4[3]);
+        /*
+         * 内存分配：
+         * 栈内存：存储局部变量，即定义在方法中的变量，用完即走
+         * 堆内存：存储new出来的变量，具有地址，如实体，对象等,使用完毕会在垃圾回收器空闲时被回收
+         * 当多个数组初始指向相同的时候，修改其中任意一个数组对应索引位置的值，
+         * 其余数组对应索引位置的值也会变为修改后的值
+         */
+        int[] arr3 = arr1;
+        arr3[0] = 100;
+        arr3[1] = 200;
+        arr3[2] = 300;
+        System.out.println(arr1);
+        System.out.println(arr3);
+        System.out.println(arr1[0]);
+        System.out.println(arr3[0]);
+        System.out.println(arr1[1]);
+        System.out.println(arr3[1]);
+        System.out.println(arr1[2]);
+        System.out.println(arr3[2]);
+        System.out.println("--------");
     }
 }
