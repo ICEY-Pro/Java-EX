@@ -41,7 +41,7 @@ public class App {
     public static void main(String[] args) {// 这是输出语句，“”里面的内容是可以改变的
         // 字符串常量
         System.out.println("Hello World!");// 可以通过输入syso来快速输入
-        System.out.println("第一条测试:“你好!”");
+        System.out.println("第一条测试:“你好!”");// ln表示换行，直接用.print就不会换行
         System.out.println("--------");
         // 整数常量
         System.out.println(666);
@@ -352,7 +352,7 @@ public class App {
         System.out.println(y3);
         System.out.println("--------");
         // -------------------------------------------------------------------------------------
-
+        Getarray(arr);
     }
 
     /*
@@ -380,5 +380,12 @@ public class App {
 
     public static int sum(int a, int b, int c) {
         return a + b + c;
+    }
+
+    public static void Getarray(int[] array) {//数组遍历方法
+        for (int arr : array) {
+            // for循环的一种高级格式，arr代表变量，array代表数组，依次把数组中的元素赋值给arr参与循环
+            System.out.print(arr + " ");
+        }
     }
 }
