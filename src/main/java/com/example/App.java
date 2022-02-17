@@ -40,7 +40,7 @@ public class App {
      */
     public static void main(String[] args) {// 这是输出语句，“”里面的内容是可以改变的
         // 字符串常量
-        System.out.println("Hello World!");
+        System.out.println("Hello World!");// 可以通过输入syso来快速输入
         System.out.println("第一条测试:“你好!”");
         System.out.println("--------");
         // 整数常量
@@ -273,6 +273,7 @@ public class App {
         // Random:随机数
         Random r = new Random();
         int num = r.nextInt(10);// 10表示获取的随机数值域为[0,10),int类型获取整数，实际为0~9
+        Math.random();// 或者调用Math类中的random方法
         System.out.println("num = " + num);
         System.out.println("--------");
         // -------------------------------------------------------------------------------------
@@ -292,6 +293,9 @@ public class App {
          * 字符：空字符
          * 引用数据类型：null;
          * 获取数组长度：数组名称.length;
+         * 常见错误：
+         * 索引越界：访问了数组中不存在的的索引对应的元素
+         * 空指针异常：访问的数组已经不再指向堆内存的数据
          */
         int[] arr1 = new int[3];// Java中常用此方式声明数组
         int arr2[] = new int[4];
@@ -299,11 +303,11 @@ public class App {
         System.out.println(arr1.length);
         System.out.println(arr1[0]);
         System.out.println(arr2[1]);
-        int[] arr4 = { 1, 2, 3, 4 };
-        System.out.println(arr4[0]);
-        System.out.println(arr4[1]);
-        System.out.println(arr4[2]);
-        System.out.println(arr4[3]);
+        int[] arr = { 1, 4, 3, 2 };
+        System.out.println(arr[0]);
+        System.out.println(arr[1]);
+        System.out.println(arr[2]);
+        System.out.println(arr[3]);
         /*
          * 内存分配：
          * 栈内存：存储局部变量，即定义在方法中的变量，用完即走
@@ -324,5 +328,57 @@ public class App {
         System.out.println(arr1[2]);
         System.out.println(arr3[2]);
         System.out.println("--------");
+        // 数组常见操作1：遍历
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+        // 数组常见操作2：获取最值
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+        System.out.println(max);
+        System.out.println("--------");
+        // -------------------------------------------------------------------------------------
+        int z = getMax(10, 20);
+        System.out.println(z);
+        int y1 = sum(10, 20);
+        double y2 = sum(1.1, 2.2);
+        int y3 = sum(5, 6, 7);
+        System.out.println(y1);
+        System.out.println(y2);
+        System.out.println(y3);
+        System.out.println("--------");
+        // -------------------------------------------------------------------------------------
+
+    }
+
+    /*
+     * 方法的定义和调用
+     * 注意事项：
+     * 1.方法不能嵌套定义；
+     * 2.void表示无返回值，一般不写return，也可以书写单独的return，但不加返回值。
+     */
+    public static int getMax(int a, int b) {// 获取最大值的函数
+        int c = a > b ? a : b;
+        return c;
+    }
+
+    /*
+     * 方法重载：一个类中定义了多个方法名相同但参数不同的方法，仅返回类型不同不算重载。
+     * 在调用方法的时候JVM会根据输入参数的不同来调用不同的同名方法的不同重载类型。
+     */
+    public static int sum(int a, int b) {
+        return a + b;
+    }
+
+    public static double sum(double a, double b) {
+        return a + b;
+    }
+
+    public static int sum(int a, int b, int c) {
+        return a + b + c;
     }
 }
