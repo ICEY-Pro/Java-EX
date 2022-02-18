@@ -351,8 +351,9 @@ public class App {
         System.out.println(y2);
         System.out.println(y3);
         System.out.println("--------");
+        getArray(arr);
         // -------------------------------------------------------------------------------------
-        Getarray(arr);
+
     }
 
     /*
@@ -382,10 +383,22 @@ public class App {
         return a + b + c;
     }
 
-    public static void Getarray(int[] array) {//数组遍历方法
+    public static void getArray(int[] array) {// 数组遍历方法
         for (int arr : array) {
             // for循环的一种高级格式，arr代表变量，array代表数组，依次把数组中的元素赋值给arr参与循环
             System.out.print(arr + " ");
         }
+    }
+
+    public static boolean arrCompare(int[] arr, int[] arr1) {// 比较数组是否相同的方法
+        if (arr.length != arr1.length) {
+            return false;
+        }
+        for (int x = 0; x < arr.length; x++) {
+            if (arr[x] != arr1[x]) {
+                return false;
+            }
+        }
+        return true;
     }
 }
