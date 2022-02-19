@@ -1,10 +1,10 @@
 package com.example;
 
 import java.util.Random;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
- * Hello world!
+ * JAVA-EX
  *
  */
 /*
@@ -143,15 +143,17 @@ public class App {
         }
         System.out.println("--------");
         // 键盘输入数据并判断
-        Scanner sc = new Scanner(System.in);
-        System.out.println("请输入一个整数:");
-        int number = sc.nextInt();
-        if (number % 2 == 0) {
-            System.out.println(number + "为偶数");
-        } else {
-            System.out.println(number + "为奇数");
-        }
-        System.out.println("--------");
+        /*
+         * Scanner sc = new Scanner(System.in);
+         * System.out.println("请输入一个整数:");
+         * int number = sc.nextInt();
+         * if (number % 2 == 0) {
+         * System.out.println(number + "为偶数");
+         * } else {
+         * System.out.println(number + "为奇数");
+         * }
+         * System.out.println("--------");
+         */
         // 数据测试：正确数据，边界数据，错误数据
         // ------------------------------------------------------------------------------------
         // switch语句
@@ -167,35 +169,37 @@ public class App {
                 // break;
         }
         // case穿透
-        System.out.println("请输入一个月份:");
-        int month = sc.nextInt();
-        switch (month) {
-            case 1:
-            case 2:
-            case 12:
-                System.out.println(month + "月为冬季");
-                break;
-            case 3:
-            case 4:
-            case 5:
-                System.out.println(month + "月为春季");
-                break;
-            case 6:
-            case 7:
-            case 8:
-                System.out.println(month + "月为夏季");
-                break;
-            case 9:
-            case 10:
-            case 11:
-                System.out.println(month + "月为秋季");
-                break;
-            default:
-                System.out.println("输入有误");
-                // break;
-        }
-        sc.close();
-        System.out.println("--------");
+        /*
+         * System.out.println("请输入一个月份:");
+         * int month = sc.nextInt();
+         * switch (month) {
+         * case 1:
+         * case 2:
+         * case 12:
+         * System.out.println(month + "月为冬季");
+         * break;
+         * case 3:
+         * case 4:
+         * case 5:
+         * System.out.println(month + "月为春季");
+         * break;
+         * case 6:
+         * case 7:
+         * case 8:
+         * System.out.println(month + "月为夏季");
+         * break;
+         * case 9:
+         * case 10:
+         * case 11:
+         * System.out.println(month + "月为秋季");
+         * break;
+         * default:
+         * System.out.println("输入有误");
+         * // break;
+         * }
+         * sc.close();
+         * System.out.println("--------");
+         */
         // ------------------------------------------------------------------------------------
         // for循环语句,g为局部变量，循环结束后无法使用
         for (int g = 1; g <= 5; g++) {
@@ -350,10 +354,80 @@ public class App {
         System.out.println(y1);
         System.out.println(y2);
         System.out.println(y3);
-        System.out.println("--------");
         getArray(arr);
+        System.out.println(" ");
+        System.out.println("--------");
         // -------------------------------------------------------------------------------------
+        /*
+         * 类:对现实生活中一类具有共同属性和行为的事物的抽象
+         * 类是对象的抽象,对象是一个接近实体的概念
+         * *特点:类是对象的数据类型;
+         * 类是具有相同属性和行为的一组对象的集合.
+         * 属性:对象具有的各种特征,每个对象的每个属性都拥有特定的值,在类中通过实例变量来实现
+         * 行为:对象能够执行的操作,在类中通过方法来实现
+         * 创建对象格式:类名 对象名 = new 类名();
+         * 使用实例变量格式:对象名.变量名;
+         * 调用方法格式:对象名.方法名();
+         */
+        // 创建手机类对象
+        Phone p = new Phone();
+        p.brand = "小米";
+        p.price = 3090;
+        System.out.println(p.brand);
+        System.out.println(p.price);
+        p.call();
+        p.sendMessage();
+        System.out.println("--------");
 
+        // 多个对象指向相同时,由于遥控器效应和按值传递,修改其中一个时另一个改为相同值
+
+        /*
+         * 封装:用private修饰实例变量,提供getter和setter用于获取和设置实例变量的值
+         * getter和setter还可以对变量的值进行数据安全校验以防止非法数据
+         * getter一般有返回值,用返回值类型声明
+         * setter一般无返回值,用void类型声明
+         */
+
+        // 创建学生类对象
+        Student s1 = new Student("admin", 114);
+        s1.show();
+        Student s2 = new Student();
+        s2.show();
+        s2.setName("林梦月");
+        s2.setAge(20);
+        s2.show();
+        System.out.println(s2.getName() + "---" + s2.getAge());
+
+        /*
+         * this关键字:this关键字修饰的变量用于指代实例变量,解决局部变量隐藏成员变量
+         * 方法的形参若与实例变量同名,未被this修饰的变量为形参
+         * 方法的形参不与实例变量同名,未被this修饰的变量为实例变量
+         * this代表所在类的对象引用
+         */
+
+        /*
+         * 构造方法:作用为创建对象,并完成对象数据的初始化
+         * 格式:修饰符一般用public
+         * 修饰符 类名(参数){
+         * }
+         * 定义了带参构造方法后,系统将不再提供默认无参构造方法,需要重新定义一个无参构造方法
+         * 无论是否使用,都建议定义一个无参构造方法
+         * 构造方法也可以重载
+         */
+
+        /*
+         * 标准类制作:
+         * 1.成员变量:均使用private修饰
+         * 2.构造方法:提供一个无参构造方法和一个带多个参数的构造方法
+         * 3.成员方法:提供每一个实例变量对应的getter和setter,并提供一个现实对象信息的show()方法
+         * 4.测试类:为成员变量赋值的两种方式
+         * 1)无参构造方法创建对象后使用setter赋值
+         * 2)使用带参构造方法直接创建带有属性值的对象
+         */
+
+        /*
+         * API:应用程序接口
+         */
     }
 
     /*
