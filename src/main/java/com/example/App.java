@@ -447,7 +447,6 @@ public class App {
          * 特点:
          * 1.通过new创建的对象,每一次new都会申请一个地址不同的内存空间
          * 2.通过""创建的对象,只要字符序列相同,无论出现几次,JVM都只会建立一个String对象,并在字符串池中维护
-         * 
          */
 
         String str1 = new String();
@@ -460,6 +459,13 @@ public class App {
         System.out.println("str3:" + str3);
         String str4 = "abc";
         System.out.println("str4:" + str4);
+
+        /*
+         * 比较:使用==比较:
+         * 基本数据类型:判断数据值是否相同
+         * 引用数据类型:判断地址值是否相同
+         * 字符串对象比较:s1.equals(s2);
+         */
     }
 
     /*
