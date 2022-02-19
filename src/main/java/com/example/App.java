@@ -428,6 +428,38 @@ public class App {
         /*
          * API:应用程序接口
          */
+
+        /*
+         * Scanner sc = new Scanner(System.in);
+         * System.out.println("请输入一个字符串数据:");
+         * String nextLine = sc.nextLine();
+         * System.out.println("你输入的数据是:" + nextLine);
+         * sc.close();
+         */
+
+        /*
+         * String类
+         * 构造方法:推荐使用直接赋值的方式得到字符串
+         * public String(),创建一个空白字符串对象,不含有任何内容
+         * public String(char[] chs),根据字符数组的内容创建字符串对象
+         * public String(byte[] bys),根据字节数组的内容创建字符串对象,按数字对应的ASCII码输出字符串
+         * String s = "abc";直接赋值创建字符串对象
+         * 特点:
+         * 1.通过new创建的对象,每一次new都会申请一个地址不同的内存空间
+         * 2.通过""创建的对象,只要字符序列相同,无论出现几次,JVM都只会建立一个String对象,并在字符串池中维护
+         * 
+         */
+
+        String str1 = new String();
+        System.out.println("str1:" + str1);
+        char[] chs = { 'a', 'b', 'c' };
+        String str2 = new String(chs);
+        System.out.println("str2:" + str2);
+        byte[] bys = { 97, 98, 99 };
+        String str3 = new String(bys);
+        System.out.println("str3:" + str3);
+        String str4 = "abc";
+        System.out.println("str4:" + str4);
     }
 
     /*
