@@ -447,6 +447,13 @@ public class App {
          * 特点:
          * 1.通过new创建的对象,每一次new都会申请一个地址不同的内存空间
          * 2.通过""创建的对象,只要字符序列相同,无论出现几次,JVM都只会建立一个String对象,并在字符串池中维护，即地址相同
+         * String类中的charAt()方法的作用是返回指定索引处的char值
+         * length()方法的作用是返回此字符串的长度
+         */
+
+        /*
+         * StringBuilder类:
+         * 一个可以改变对象中内容的字符串类,可以视为一个容器
          */
 
         String str1 = new String();
@@ -460,12 +467,15 @@ public class App {
         String str4 = "abc";
         System.out.println("str4:" + str4);
 
+        StringBuilderDemo sb = new StringBuilderDemo();
+        sb.StringBuild();
+
         /*
          * 比较:使用==比较:
          * 基本数据类型:判断数据值是否相同
          * 引用数据类型:判断地址值是否相同
          * 字符串对象比较:s1.equals(s2);
-         * equals()方法比较字符串内容是否相同
+         * equals()方法比较字符串内容是否相同,严格区分大小写
          * 判断字符类型时,直接判断字符是否在对应范围即可
          * ex:大写字母:ch >= 'A' && ch <= 'Z';
          * 小写字母:ch >= 'a' && ch <= 'z';

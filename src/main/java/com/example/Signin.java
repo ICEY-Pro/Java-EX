@@ -6,11 +6,11 @@ import java.util.Scanner;
  * 登录系统
  *
  */
-public class StringTest01 {
+public class Signin {
     private String username = "admin";
     private String password = "123456";
 
-    public StringTest01() {
+    public Signin() {
     }
 
     private void St() {
@@ -35,7 +35,7 @@ public class StringTest01 {
     }
 
     public void login() {
-        StringTest01 st = new StringTest01();
+        Signin st = new Signin();
         st.St();
     }
 }
