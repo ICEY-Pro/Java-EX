@@ -481,6 +481,21 @@ public class App {
          * 小写字母:ch >= 'a' && ch <= 'z';
          * 数字:ch >= '0' && ch <= '9';
          */
+
+        /*
+         * ArrayList类:可调整大小数组
+         * 集合类:提供一种存储空间可变的存储模型,存储的数据容量可以发生改变;
+         * ArrayList<E>:E是一种特殊的数据类型,泛型,出现E的地方用引用数据类型替换即可
+         * add()方法也会越界,最多在已有元素末尾插入,不可在空索引后插入元素;
+         * 返回值    方法                       作用
+         * boolean  add(int index, E e)        将指定的元素插入到此列表中的指定位置;
+         * void     add(E e)                   将指定的元素追加到此列表的末尾;
+         * E        get(int index)             返回此列表中指定位置处的元素;
+         * E        remove(int index)          删除此列表中指定位置处的元素;
+         * boolean  remove(Object o)           从此列表中删除指定元素的第一个匹配项(如果存在);
+         * E        set(int index, E element)  将此列表中指定位置的元素替换为指定的元素;
+         * int      size()                     返回此列表中的元素数;
+         */
     }
 
     /*
